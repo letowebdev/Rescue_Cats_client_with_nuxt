@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <nuxt-link class="nav-link" :to="{name: 'index'}">Home</nuxt-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Posts</a>
@@ -18,17 +18,36 @@
             </li>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
           </form>
-
           </ul>
+
           <ul class="navbar-nav float-right">
+          <template v-if="! $auth.loggedIn">
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <nuxt-link class="nav-link"  :to="{name: 'register'}">Register</nuxt-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <nuxt-link class="nav-link"  :to="{name: 'login'}">Login</nuxt-link>
             </li>
+              </template>
+              <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+
+      
+
+          <template v-if="$auth.loggedIn">
+        <b-nav-item-dropdown right>
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>Hi User</em>
+          </template>
+          <b-dropdown-item href="#">Profile</b-dropdown-item>
+          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
+          </template>
+      </b-navbar-nav>
+
           </ul>
         </div>
       </nav>
