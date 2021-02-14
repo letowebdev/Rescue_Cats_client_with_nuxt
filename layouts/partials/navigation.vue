@@ -42,8 +42,12 @@
           <template #button-content>
             <em>Hi User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item disabled><i class="fas fa-user-circle"></i> YOUR ACCOUNT</b-dropdown-item>
+          <hr>
+          <b-dropdown-item href="#"><i class="fas fa-user"></i> Profile</b-dropdown-item>
+          <b-dropdown-item href="#"><i class="fas fa-cogs"></i> Settings</b-dropdown-item>
+          <hr>
+          <b-dropdown-item href="#" @click.prevent="logout"> <i class="fas fa-lock"></i> Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
           </template>
       </b-navbar-nav>
@@ -56,7 +60,11 @@
 
 <script>
 export default {
-  
+  methods: {
+    logout() {
+      this.$auth.logout()
+    }
+  }
 };
 </script>
 

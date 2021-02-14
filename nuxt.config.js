@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -61,7 +63,7 @@ export default {
           // autoFetch: true
         },
         endpoints: {
-          login: { url: 'auth/login', method: 'post' , propertyName: 'token' },
+          login: { url: 'auth/login', method: 'post' , propertyName: 'meta.token' },
           logout: { url: 'auth/logout', method: 'post' },
           user: { url: 'auth/me', method: 'get', propertyName: 'data' }
         }
