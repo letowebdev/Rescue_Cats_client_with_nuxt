@@ -113,7 +113,7 @@ export default {
   },
   async asyncData({ $axios, params, error, redirect }) {
     try {
-      const post = await $axios.$get(`posts/${params.id}`);
+      const post = await $axios.$get(`posts/${params.id}/user`);
       return { post: post.data};
     } catch (err) {
       if (err.response.status === 404) {
@@ -131,7 +131,7 @@ export default {
         .put(`/posts/${this.$route.params.id}`)
         .then(res => {
           setTimeout(() => {
-            this.$router.push({ name: 'index' });
+            this.$router.push({ name: 'settings.dashboard' });
           }, 1000);
         })
         .catch(err => console.log(err.response));
