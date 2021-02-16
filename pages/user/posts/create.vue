@@ -74,9 +74,6 @@
                 </div>
 
                 <div class="text-right">
-                  <!-- <nuxt-link :to="{ name: 'settings.posts' }"
-                    >Cancel</nuxt-link
-                  > -->
                     <button type="submit" class="btn btn-primary" :disabled="form.busy">
                         <span v-if="form.busy">
                         <i class="fas fa-spinner fa-spin"></i>
@@ -131,7 +128,7 @@ export default {
         .put(`/posts/${this.$route.params.id}`)
         .then(res => {
           setTimeout(() => {
-            this.$router.push({ name: 'settings.dashboard' });
+            this.$router.push({ name: 'settings.posts' });
           }, 1000);
         })
         .catch(err => console.log(err.response));

@@ -74,9 +74,10 @@
                 </div>
 
                 <div class="text-right">
-                  <!-- <nuxt-link :to="{ name: 'settings.posts' }"
+                  <nuxt-link :to="{ name: 'settings.posts' }"
+                  class="btn btn-danger"
                     >Cancel</nuxt-link
-                  > -->
+                  >
                     <button type="submit" class="btn btn-primary" :disabled="form.busy">
                         <span v-if="form.busy">
                         <i class="fas fa-spinner fa-spin"></i>
