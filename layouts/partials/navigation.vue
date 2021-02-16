@@ -1,7 +1,7 @@
 <template>
   <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Paramedic Blog</a>
+        <a class="navbar-brand" href="#">Rescue Cats</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,12 +43,12 @@
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>Hi User</em>
+            <em>Hi {{$auth.user.username}}</em>
           </template>
           <b-dropdown-item disabled><i class="fas fa-user-circle"></i> YOUR ACCOUNT</b-dropdown-item>
           <hr>
           <nuxt-link class="dropdown-item" to="/settings/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</nuxt-link>
-          <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+          <nuxt-link class="dropdown-item"  :to="{name: 'settings.profile'}"><i class="fas fa-user"></i> Profile</nuxt-link>
           <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
           <hr>
           <b-dropdown-item href="#" @click.prevent="logout"> <i class="fas fa-lock"></i> Sign Out</b-dropdown-item>

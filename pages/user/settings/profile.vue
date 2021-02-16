@@ -5,7 +5,7 @@
     <div class="cart-body white-bg-color">
       <form class="custom-form" @submit.prevent="update">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-8">
             <alert-success :form="form">Profile information updated successfully</alert-success>
 
              <div class="form-group">
@@ -59,14 +59,14 @@
               <input
                 type="checkbox"
                 class="custom-control-input"
-                id="available_to_hire"
-                v-model="form.available_to_hire"
+                id="available_to_volunteer"
+                v-model="form.available_to_volunteer"
               />
               <label
                 class="custom-control-label"
                 :value="true"
-                for="available_to_hire"
-              >Available to hire?</label>
+                for="available_to_volunteer"
+              >Available to volunteer?</label>
             </div>
 
             <div class="text-right">
@@ -93,7 +93,7 @@ export default {
         about: '',
         tagline: '',
         formatted_address: '',
-        available_to_hire: false
+        available_to_volunteer: false
       })
     };
   },
