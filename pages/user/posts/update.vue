@@ -4,7 +4,7 @@
     <section class="hero text-center bg-secondary mb-4 text-white">
       <div class="container">
         <h1 class="font-28 fw-600 text-uppercase">
-          Add Your Post Information
+          Update Your Post Information
         </h1>
       </div>
     </section>
@@ -25,7 +25,7 @@
             <div class="card-body">
               <form @submit.prevent="submit">
                 <alert-success :form="form">
-                  Post successfully Created
+                  Post successfully Updated
                 </alert-success>
                 <div class="form-group">
                     <input class="form-control form-control-lg font-14 fw-300" 
@@ -81,7 +81,7 @@
                         <span v-if="form.busy">
                         <i class="fas fa-spinner fa-spin"></i>
                         </span>
-                        Create Post
+                        Update Post
                     </button>
                 </div>
               </form>
@@ -131,7 +131,7 @@ export default {
         .put(`/posts/${this.$route.params.id}`)
         .then(res => {
           setTimeout(() => {
-            this.$router.push({ name: 'settings.dashboard' });
+            this.$router.push({ name: 'settings.posts' });
           }, 1000);
         })
         .catch(err => console.log(err.response));

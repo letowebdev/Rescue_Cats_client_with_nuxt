@@ -47,8 +47,9 @@
           </template>
           <b-dropdown-item disabled><i class="fas fa-user-circle"></i> YOUR ACCOUNT</b-dropdown-item>
           <hr>
-          <b-dropdown-item><nuxt-link :to="{name: 'settings.dashboard'}"><i class="fas fa-user"></i> Profile</nuxt-link></b-dropdown-item>
-          <b-dropdown-item> <nuxt-link :to="{name: 'settings.profile'}"><i class="fas fa-cogs"></i> Settings</nuxt-link></b-dropdown-item>
+          <nuxt-link class="dropdown-item" to="/settings/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</nuxt-link>
+          <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
           <hr>
           <b-dropdown-item href="#" @click.prevent="logout"> <i class="fas fa-lock"></i> Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>

@@ -10,6 +10,8 @@ const routes = [
   { path: '/register', name: 'register', component: page('auth/register.vue') },
   { path: '/upload', name: 'add-post', component: page('user/posts/upload.vue') },
   { path: '/posts/:id/create', name: 'create-post', component: page('user/posts/create.vue') },
+  { path: '/posts/:id/update', name: 'update-post', component: page('user/posts/update.vue') },
+
 
   {
     path: '/settings',
@@ -26,6 +28,11 @@ const routes = [
         name: 'settings.profile',
         component: page('user/settings/profile.vue')
       },
+      {
+        path: 'posts',
+        name: 'settings.posts',
+        component: page('user/settings/posts.vue')
+      }
       
     ]
   }
