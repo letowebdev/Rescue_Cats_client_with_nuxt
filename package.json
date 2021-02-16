@@ -14,6 +14,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/router": "^1.5.0",
     "add": "^2.0.6",
+    "better-vue-input-tag": "^1.1.0",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.3",
