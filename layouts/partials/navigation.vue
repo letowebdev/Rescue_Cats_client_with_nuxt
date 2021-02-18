@@ -1,6 +1,6 @@
 <template>
   <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar text-secondary navbar-expand-md navbar-light fixed-top bg-light">
         <a class="navbar-brand" href="#">Rescue Cats</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -19,10 +19,9 @@
             <li class="nav-item">
               <nuxt-link class="nav-link" :to="{name: 'add-post'}" >Add Post</nuxt-link>
             </li>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-          </form>
+             <li class="nav-item">
+              <nuxt-link class="nav-link" :to="{name: 'search.posts'}" >Search</nuxt-link>
+            </li>
           </ul>
 
           <ul class="navbar-nav float-right">
@@ -36,8 +35,6 @@
               </template>
               <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-
-      
 
           <template v-if="$auth.loggedIn">
         <b-nav-item-dropdown right>
@@ -59,6 +56,11 @@
           </ul>
         </div>
       </nav>
+      <!-- Search section
+      <nav class="navbar navbar-expand-md bg-dark mt-2">
+        <input type="search" class="form-control rounded input-group col-md-8 mr-auto ml-auto" placeholder="Search" aria-label="Search"
+          aria-describedby="search-addon" />
+      </nav> -->
     </header>
 </template>
 
